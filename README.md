@@ -26,7 +26,7 @@ EverBenched | Já ficou sem projeto |
 ExperienceInCurrentDomain | Experiência na área atual |
 LeaveOrNot | Target (0 = Não saiu, 1 = Saiu) |
 
-A base possui aproximadamente 4.600 registros e é utilizada para tarefas de classificação binária. :contentReference[oaicite:0]{index=0}  
+A base possui aproximadamente 4.600 registros e é utilizada para tarefas de classificação binária.
 
 ---
 
@@ -68,7 +68,7 @@ Os seguintes algoritmos foram implementados:
 - XGBClassifier
 - LGBMClassifier
 - CatBoostClassifier
-- 
+
 Cada modelo foi avaliado em múltiplos cenários para garantir robustez dos resultados.
 
 ---
@@ -82,7 +82,7 @@ Foram utilizadas métricas adequadas para classificação desbalanceada:
 - Recall
 - PR-AUC 
 
-A métrica **Recall** foi priorizada.
+A métrica **Recall** e **F1-Score** foi priorizada.
 
 ---
 
@@ -101,10 +101,11 @@ Os modelos foram testados em diferentes condições:
 
 | Modelo | Cenário | Balanced Accuracy | F1-Score | Recall | PR-AUC |
 |--------|---------|------------------|----------|---------|--------|
-Logistic Regression | L2 LBFGS - Keep Duplicates - Remove Features Scenario 2 | 0.77 | 0.7 | 0.68 | 0.82 |
-SVC | Keep Duplicates - Remove Features Scenario 3 | 0.81 | 0.75 | 0.71 | 0.83 |
-SVC | Keep Duplicates - Remove Features Scenario 2 - SMOTE | 0.80 | 0.74 | 0.74 | 0.83 |
+Logistic Regression | L1 liblinear - Keep Duplicates - Remove Features Scenario 4 | 0.77 | 0.69 | 0.68 | 0.80 |
+SVC | Keep Duplicates - Remove Features Scenario 3 | 0.79 | 0.74 | 0.62 | 0.85 |
+SVC | Keep Duplicates - Remove Features Scenario 2 - SMOTE | 0.82 | 0.77 | **0.74** | 0.85 |
 
+Os resultados da tabela correspondem ao desempenho no conjunto de teste após a etapa de validação cruzada.
 
 ---
 
